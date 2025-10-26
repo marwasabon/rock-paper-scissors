@@ -1,6 +1,11 @@
 let humanScore = 0;
 let computerScore = 0;
 
+function getComputerChoice() {
+  const choices = ["rock", "paper", "scissors"];
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
 //branch feat getchoice
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
