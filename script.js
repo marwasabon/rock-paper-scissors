@@ -1,12 +1,11 @@
 let humanScore = 0;
 let computerScore = 0;
 
+//branch feat getchoice
 function getComputerChoice() {
-    const choices = ["rock", "paper", "scissors"];
-    const randomIndex = Math.floor(Math.random() * 3);
-    return choices[randomIndex];
+  const choices = ["rock", "paper", "scissors"];
+  return choices[Math.floor(Math.random() * choices.length)];
 }
-
 function getHumanChoice() {
     let choice = prompt("Choose rock, paper, or scissors:").toLowerCase();
     while (!["rock", "paper", "scissors"].includes(choice)) {
