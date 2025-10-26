@@ -1,22 +1,16 @@
 let humanScore = 0;
 let computerScore = 0;
 
-function getComputerChoice() {
-  const choices = ["rock", "paper", "scissors"];
-  return choices[Math.floor(Math.random() * choices.length)];
-}
 
 //branch feat getchoice
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
   return choices[Math.floor(Math.random() * choices.length)];
 }
+//branch gethuman choice
 function getHumanChoice() {
-    let choice = prompt("Choose rock, paper, or scissors:").toLowerCase();
-    while (!["rock", "paper", "scissors"].includes(choice)) {
-        choice = prompt("Invalid choice. Please choose rock, paper, or scissors:").toLowerCase();
-    }
-    return choice;
+  let choice = prompt("Enter rock, paper, or scissors:");
+  return choice.toLowerCase();
 }
 
 function playRound(humanChoice, computerChoice) {
