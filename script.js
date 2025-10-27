@@ -12,24 +12,19 @@ function getHumanChoice() {
   let choice = prompt("Enter rock, paper, or scissors:");
   return choice.toLowerCase();
 }
-
+//branch play
 function playRound(humanChoice, computerChoice) {
-    console.log(`You chose: ${humanChoice}`);
-    console.log(`Computer chose: ${computerChoice}`);
-
-    if (humanChoice === computerChoice) {
-        console.log("It's a tie!");
-    } else if (
-        (humanChoice === "rock" && computerChoice === "scissors") ||
-        (humanChoice === "paper" && computerChoice === "rock") ||
-        (humanChoice === "scissors" && computerChoice === "paper")
-    ) {
-        humanScore++;
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-    } else {
-        computerScore++;
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-    }
+  if (humanChoice === computerChoice) {
+    return "It's a tie!";
+  } else if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+  ) {
+    return "You win!";
+  } else {
+    return "You lose!";
+  }
 }
 
 function playGame() {
