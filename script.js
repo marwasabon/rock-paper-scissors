@@ -26,27 +26,20 @@ function playRound(humanChoice, computerChoice) {
     return "You lose!";
   }
 }
-
 function playGame() {
-    console.log("Welcome to Rock Paper Scissors! Best of 5 rounds wins.");
-    
-    for (let i = 0; i < 5; i++) {
-        console.log(`\nRound ${i + 1}:`);
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
+  let humanScore = 0;
+  let computerScore = 0;
 
-    console.log("\nFinal Scores:");
-    console.log(`You: ${humanScore} | Computer: ${computerScore}`);
+  for (let i = 0; i < 5; i++) {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+    const result = playRound(humanChoice, computerChoice);
+    console.log(result);
 
-    if (humanScore > computerScore) {
-        console.log("Congratulations! You win the game!");
-    } else if (humanScore < computerScore) {
-        console.log("Sorry, you lost the game. Better luck next time!");
-    } else {
-        console.log("The game is a tie!");
-    }
+    if (result.includes("win")) humanScore++;
+    else if (result.includes("lose")) computerScore++;
+  }
+
+  console.log(`Final Score: You ${humanScore} - Computer ${computerScore}`);
 }
-
-playGame();
+ playGame();
