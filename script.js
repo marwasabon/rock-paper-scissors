@@ -14,17 +14,13 @@ function getHumanChoice() {
 }
 //branch play
 function playRound(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) {
-    return "It's a tie!";
-  } else if (
-    (humanChoice === "rock" && computerChoice === "scissors") ||
-    (humanChoice === "paper" && computerChoice === "rock") ||
-    (humanChoice === "scissors" && computerChoice === "paper")
-  ) {
-    return "You win!";
-  } else {
-    return "You lose!";
-  }
+  return humanChoice === computerChoice
+    ? "It's a tie!"
+    : (humanChoice === "rock" && computerChoice === "scissors") ||
+      (humanChoice === "paper" && computerChoice === "rock") ||
+      (humanChoice === "scissors" && computerChoice === "paper")
+    ? "You win!"
+    : "You lose!";
 }
 function playGame() {
   let humanScore = 0;
